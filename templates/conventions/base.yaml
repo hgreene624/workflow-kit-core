@@ -1,0 +1,73 @@
+# WFK base conventions -- the artifact types the Artifact Engine standardizes and files.
+# Layered, highest wins: base.yaml (this, kit-owned) < plugins.yaml (plugin-owned) < personal.yaml (Gap-flow + tailoring).
+# `update` overwrites this file wholesale and never touches personal.yaml.
+# Non-technical loadouts use descriptive filenames; the type is carried in frontmatter.
+
+version: 1
+
+defaults:
+  naming: descriptive          # descriptive | prefix  (prefix is a Build-plugin loadout option)
+  date_format: "YYYY-MM-DD"
+  language: en                 # set per loadout; drives which trigger set is active
+
+conventions:
+
+  project:
+    type: project
+    category: Project
+    destination: "02_Projects/{project}/"
+    filename_pattern: "{project}.md"
+    frontmatter_schema:
+      required: [type, created, status, priority]
+      optional: [next_move, open_loops, blockedby]
+    writing_profile: project
+    structure: |
+      # {project}
+      ## Goal
+      ## Steps
+      ## Log
+    triggers:
+      en: ["new project", "start a project", "I'm working on", "set up a project for"]
+      es: ["nuevo proyecto", "empezar un proyecto", "estoy trabajando en", "crear un proyecto para"]
+
+  note:
+    type: note
+    category: Note
+    destination: "01_Notes/"
+    filename_pattern: "{title}.md"
+    frontmatter_schema:
+      required: [type, created]
+      optional: [project, tags]
+    writing_profile: general
+    triggers:
+      en: ["make a note", "save this", "write this down", "jot this"]
+      es: ["haz una nota", "guarda esto", "guardalo", "anota esto", "apunta esto"]
+
+  meeting:
+    type: meeting
+    category: Meeting
+    destination: "01_Notes/Meetings/"
+    filename_pattern: "{people} {date}.md"
+    frontmatter_schema:
+      required: [type, created, attendees]
+      optional: [project, actions]
+    writing_profile: meeting
+    structure: |
+      ## Attendees
+      ## Notes
+      ## Actions
+    triggers:
+      en: ["I had a meeting", "met with", "call with", "log this meeting"]
+      es: ["tuve una reunion", "me reuni con", "llamada con", "registra esta reunion"]
+
+  daily_log:
+    type: daily_log
+    category: Daily
+    destination: "01_Notes/Daily/"
+    filename_pattern: "{date}.md"
+    frontmatter_schema:
+      required: [type, created]
+    writing_profile: general
+    triggers:
+      en: ["log my day", "what did I do today", "daily note"]
+      es: ["registra mi dia", "que hice hoy", "nota diaria"]

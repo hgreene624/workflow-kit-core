@@ -1,0 +1,4 @@
+{
+  "//": "Vault .claude/settings.json TEMPLATE. /setup copies this to <vault>/.claude/settings.json. Enabling the plugin loads its skills + hooks (SessionStart, PostToolUse) scoped to this vault only. Add loadout plugins (e.g. wfk-notes, wfk-build) to the array as the user installs them.",
+  "enabledPlugins": ["wfk-core@workflow-kit"]
+}

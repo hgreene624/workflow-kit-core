@@ -1,0 +1,15 @@
+{
+  "name": "workflow-kit",
+  "owner": "hgreene624",
+  "metadata": {
+    "description": "Workflow Kit: an ambient Claude Code + Obsidian second-brain system. Core plus opt-in plugin packs. The user invokes almost nothing; the workflow generates and organizes work artifacts on its own.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "wfk-core",
+      "source": "./plugins/core",
+      "description": "The Core engines (Artifact Engine, Project Sense, Learn, Meta-Orchestrator), one living project doc per project, an agent-maintained intent layer, and a derived Meta Plan. The base everyone installs."
+    }
+  ]
+}

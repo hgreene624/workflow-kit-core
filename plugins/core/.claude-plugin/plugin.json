@@ -1,0 +1,8 @@
+{
+  "name": "wfk-core",
+  "version": "0.1.0",
+  "description": "Workflow Kit Core: ambient artifact generation and organization, one living project doc per project, an agent-maintained intent layer (priorities + dependency edges), and a Meta Plan derived on load. Four always-on engines, one real command (closeout).",
+  "author": { "name": "Holden Greene" },
+  "homepage": "https://github.com/hgreene624/workflow-kit-core",
+  "keywords": ["workflow", "obsidian", "second-brain", "notes", "projects", "ambient"]
+}
