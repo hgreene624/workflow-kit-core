@@ -13,7 +13,9 @@ cd "${ROOT}" 2>/dev/null || exit 0
 
 # Commit only when the working tree actually changed. Auto-checkpoint of a notes vault;
 # the user reviews history and can revert any checkpoint.
-if ! git diff --quiet 2>/dev/null || ! git diff --cached --quiet 2>/dev/null; then
+# Use `git status --porcelain` (not `git diff`): diff misses brand-new UNTRACKED files,
+# which is exactly what the Artifact Engine produces. porcelain reports tracked + untracked.
+if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
   git add -A >/dev/null 2>&1 || exit 0
   git commit -q -m "wfk: auto-checkpoint" >/dev/null 2>&1 || exit 0
 fi
