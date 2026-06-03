@@ -1,6 +1,6 @@
 {
   "name": "workflow-kit",
-  "owner": "hgreene624",
+  "owner": { "name": "hgreene624" },
   "metadata": {
     "description": "Workflow Kit: an ambient Claude Code + Obsidian second-brain system. Core plus opt-in plugin packs. The user invokes almost nothing; the workflow generates and organizes work artifacts on its own.",
     "version": "0.1.0"

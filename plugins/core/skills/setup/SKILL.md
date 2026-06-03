@@ -16,7 +16,7 @@ Create a fresh, self-contained new-model vault the user adds in Obsidian.
    - empty `.wfk/intent.jsonl`.
    - `.wfk/paths.json` with `vault_root` and `language`.
 4. **Write `CLAUDE.md`** from the plugin's `templates/CLAUDE.md`, filling name, role, language, and a save-word.
-5. **Enable the plugin per vault:** write `.claude/settings.json` from the template (`enabledPlugins: ["wfk-core@workflow-kit"]`). This scopes the engines + hooks to this vault only.
+5. **Enable the plugin per vault:** write `.claude/settings.json` from the template (`enabledPlugins` is an object map: `{"wfk-core@workflow-kit": true}`). This scopes the engines + hooks to this vault only.
 6. **Sweep old global skills:** if `~/.claude/skills/` holds old WFK skills, move them to a timestamped backup so they stop shadowing the plugin-scoped ones. Report what was archived.
 7. **First commit**, then tell the user to add the vault folder in Obsidian.
 
