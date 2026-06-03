@@ -30,7 +30,7 @@ These are the things that trip everyone up. Two minutes here saves an hour later
 - **Make sure `claude` runs from anywhere.** After installing, open a new terminal and type `claude`. If you get "command not found," the program isn't on your PATH yet:
   - The program usually lives at `~/.local/bin/claude`.
   - **zsh** (default on modern macOS): add `export PATH="$HOME/.local/bin:$PATH"` to `~/.zshrc`.
-  - **bash on macOS:** add that same line to `~/.bash_profile` (not `~/.bashrc` — macOS login shells read `.bash_profile`).
+  - **bash on macOS:** add that same line to `~/.bash_profile` (not `~/.bashrc`, macOS login shells read `.bash_profile`).
   - Open a brand-new terminal window and type `claude` again to confirm it sticks.
 - **Heads-up on usage.** First-time setup does a lot of work and uses more tokens than a normal chat. On the $20 Pro plan you might bump the limit mid-setup; if you do, wait for the reset or use a higher tier for the first session.
 - **You'll want Obsidian** to see your vault. Free: https://obsidian.md
@@ -39,7 +39,7 @@ These are the things that trip everyone up. Two minutes here saves an hour later
 
 ## Install (three commands, in Claude Code)
 
-Open Claude Code in a terminal, then type these at the prompt (they're Claude Code commands, not shell commands — type them where you'd type a message):
+Open Claude Code in a terminal, then type these at the prompt (they're Claude Code commands, not shell commands, type them where you'd type a message):
 
 1. Add the kit's marketplace:
    ```
@@ -82,7 +82,7 @@ That's it. You don't run commands from here. Try it:
 
 It will offer to save things. Say yes. When you're done for the day, type `closeout`.
 
-Keep [CHEATSHEET.md](CHEATSHEET.md) open for your first week — it's the short list of things you can just say. For a guided first session, do the [walkthrough](WALKTHROUGH.md).
+Keep [CHEATSHEET.md](CHEATSHEET.md) open for your first week, it's the short list of things you can just say. For a guided first session, do the [walkthrough](WALKTHROUGH.md).
 
 ---
 

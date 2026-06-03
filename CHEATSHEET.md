@@ -1,4 +1,4 @@
-# Talk to it — the cheat sheet
+# Talk to it: the cheat sheet
 
 Workflow Kit is **ambient**. You almost never run a command. You just talk, and it offers to file things for you. You say yes.
 

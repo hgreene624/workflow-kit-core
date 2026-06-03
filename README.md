@@ -4,7 +4,7 @@ An ambient Claude Code + Obsidian second-brain system. You talk; the workflow ge
 
 This is the ground-up rebuild that replaces the original 47-skill, spec-driven Workflow Kit. It ships as a **Claude Code plugin marketplace**: a small **Core** plus opt-in plugin packs.
 
-> **New here? Start with [QUICKSTART.md](QUICKSTART.md)** — zero to a working vault in ~15 minutes, written for non-developers. Then keep [CHEATSHEET.md](CHEATSHEET.md) open and do the 10-minute [WALKTHROUGH.md](WALKTHROUGH.md). This README is the contributor/overview door; the Quickstart is the user door.
+> **New here? Start with [QUICKSTART.md](QUICKSTART.md)**, zero to a working vault in ~15 minutes, written for non-developers. Then keep [CHEATSHEET.md](CHEATSHEET.md) open and do the 10-minute [WALKTHROUGH.md](WALKTHROUGH.md). This README is the contributor/overview door; the Quickstart is the user door.
 >
 > **Status: alpha.** The install + skill plumbing is validated; the live conversational loop is still being shaped with first testers. Expect rough edges and tell us about them.
 
