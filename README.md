@@ -4,6 +4,10 @@ An ambient Claude Code + Obsidian second-brain system. You talk; the workflow ge
 
 This is the ground-up rebuild that replaces the original 47-skill, spec-driven Workflow Kit. It ships as a **Claude Code plugin marketplace**: a small **Core** plus opt-in plugin packs.
 
+> **New here? Start with [QUICKSTART.md](QUICKSTART.md)** — zero to a working vault in ~15 minutes, written for non-developers. Then keep [CHEATSHEET.md](CHEATSHEET.md) open and do the 10-minute [WALKTHROUGH.md](WALKTHROUGH.md). This README is the contributor/overview door; the Quickstart is the user door.
+>
+> **Status: alpha.** The install + skill plumbing is validated; the live conversational loop is still being shaped with first testers. Expect rough edges and tell us about them.
+
 ## The model
 
 **Two layers, one rule.**
@@ -24,11 +28,17 @@ This is the ground-up rebuild that replaces the original 47-skill, spec-driven W
    ```
    /plugin install wfk-core@workflow-kit
    ```
-3. Create your vault:
+3. Load it:
    ```
-   /setup
+   /reload-plugins
    ```
-   `/setup` scaffolds a fresh vault, writes its `CLAUDE.md` and `.wfk/` (conventions + intent), enables the plugin in the vault's `.claude/settings.json`, and archives any old global WFK skills so they do not bleed in. Add the new vault folder in Obsidian and start working.
+4. Create your vault:
+   ```
+   /wfk-core:setup
+   ```
+   `setup` scaffolds a fresh vault, writes its `CLAUDE.md` and `.wfk/` (conventions + intent), enables the plugin in the vault's `.claude/settings.json`, and archives any old global WFK skills so they do not bleed in. Add the new vault folder in Obsidian and start working.
+
+   Plugin skills are namespaced `wfk-core:<skill>` and the manual ones are typed by you: `/wfk-core:setup`, `/wfk-core:closeout`, `/wfk-core:migrate`, `/wfk-core:tailor`, `/wfk-core:update`, `/wfk-core:discover`. The ambient engines (artifact-engine, project, learn, meta-orchestrator, resume, save) you never type.
 
 ## Repo layout
 
@@ -51,8 +61,8 @@ Skills live in the plugin, never loose in `~/.claude/skills/`. Update with `/plu
 
 ## Migrating from the old kit
 
-Migration stands up a fresh new-model vault and imports content from the old vault as a read-only source (the old vault is never written). Specs + plans collapse into one project doc, PICs import as intent, roadmaps are dropped in favor of the derived Meta Plan. Run `/migrate` and point it at the old vault.
+Migration stands up a fresh new-model vault and imports content from the old vault as a read-only source (the old vault is never written). Specs + plans collapse into one project doc, PICs import as intent, roadmaps are dropped in favor of the derived Meta Plan. Run `/wfk-core:migrate` and point it at the old vault.
 
 ## Status
 
-v0.1.0 skeleton. Design lives in the operator's vault: `PD - Workflow Kit Core Rebuild`, `DD - WFK Core Redesign Feature Breakdown`, `ARE - WFK Core Engineering Decisions`.
+v0.1.0 alpha. Core engines + setup/closeout/migrate/update/discover/tailor are drafted; install, schemas, namespaced-skill split, and both hooks are validated. Live conversational loop is being shaped with first testers. Design lives in the operator's vault: `PD - Workflow Kit Core Rebuild`, `DD - WFK Core Redesign Feature Breakdown`, `ARE - WFK Core Engineering Decisions`.
