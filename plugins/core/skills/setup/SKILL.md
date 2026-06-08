@@ -19,6 +19,7 @@ Create a fresh, self-contained new-model vault the user adds in Obsidian.
 5. **Enable the plugin per vault:** write `.claude/settings.json` from the template (`enabledPlugins` is an object map: `{"wfk-core@workflow-kit": true}`). This scopes the engines + hooks to this vault only.
 6. **Sweep old global skills:** if `~/.claude/skills/` holds old WFK skills, move them to a timestamped backup so they stop shadowing the plugin-scoped ones. Report what was archived.
 7. **First commit**, then tell the user to add the vault folder in Obsidian.
+8. **Hand off to the tour.** The plugin's skills (including the guided concept tour) only become active after a restart inside the vault. End by giving the user the exact lines to (a) close this session and (b) reopen inside their new vault, and tell them the **first thing to say when it reopens is "show me how this works"** — that starts a short, personalized tour (`onboard`) that teaches the kit in the language of their own work. For a brand-new, non-technical user this tour is the difference between "I installed a thing" and "I get it."
 
 ## Rules
 - The vault holds instructions + config + content. Skills + hooks come from the plugin. Never copy skills into the vault or globals.

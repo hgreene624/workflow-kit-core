@@ -4,7 +4,9 @@ An ambient Claude Code + Obsidian second-brain system. You talk; the workflow ge
 
 This is the ground-up rebuild that replaces the original 47-skill, spec-driven Workflow Kit. It ships as a **Claude Code plugin marketplace**: a small **Core** plus opt-in plugin packs.
 
-> **New here? Start with [QUICKSTART.md](QUICKSTART.md)**, zero to a working vault in ~15 minutes, written for non-developers. Then keep [CHEATSHEET.md](CHEATSHEET.md) open and do the 10-minute [WALKTHROUGH.md](WALKTHROUGH.md). This README is the contributor/overview door; the Quickstart is the user door.
+> **Never touched a terminal? Start with [START-HERE.md](START-HERE.md)** — the total-handholding, zero-to-running guide (account → install → launch → one paste that hands all setup to Claude). It works on Mac and Windows and assumes no technical knowledge. After it's running, the in-product tour (`onboard`, just say "show me how this works") teaches the concepts in the language of your own work.
+>
+> **Already comfortable in a terminal?** [QUICKSTART.md](QUICKSTART.md) is the faster path (~15 min). Then keep [CHEATSHEET.md](CHEATSHEET.md) open and do the 10-minute [WALKTHROUGH.md](WALKTHROUGH.md). This README is the contributor/overview door. For onboarding other people, see [ONBOARDING-PLAYBOOK.md](ONBOARDING-PLAYBOOK.md).
 >
 > **Status: alpha.** The install + skill plumbing is validated; the live conversational loop is still being shaped with first testers. Expect rough edges and tell us about them.
 
@@ -38,7 +40,7 @@ This is the ground-up rebuild that replaces the original 47-skill, spec-driven W
    ```
    `setup` scaffolds a fresh vault, writes its `CLAUDE.md` and `.wfk/` (conventions + intent), enables the plugin in the vault's `.claude/settings.json`, and archives any old global WFK skills so they do not bleed in. Add the new vault folder in Obsidian and start working.
 
-   Plugin skills are namespaced `wfk-core:<skill>` and the manual ones are typed by you: `/wfk-core:setup`, `/wfk-core:closeout`, `/wfk-core:migrate`, `/wfk-core:tailor`, `/wfk-core:update`, `/wfk-core:discover`. The ambient engines (artifact-engine, project, learn, meta-orchestrator, resume, save) you never type.
+   Plugin skills are namespaced `wfk-core:<skill>` and the manual ones are typed by you: `/wfk-core:setup`, `/wfk-core:onboard`, `/wfk-core:closeout`, `/wfk-core:migrate`, `/wfk-core:tailor`, `/wfk-core:update`, `/wfk-core:discover`. The ambient engines (artifact-engine, project, learn, meta-orchestrator, resume, save) you never type. `onboard` is the first-run concept tour, it also fires when a new user says "show me how this works."
 
 ## Repo layout
 
@@ -46,7 +48,7 @@ This is the ground-up rebuild that replaces the original 47-skill, spec-driven W
 .claude-plugin/marketplace.json     marketplace manifest (Core + plugin packs)
 plugins/core/
   .claude-plugin/plugin.json        Core plugin manifest
-  skills/                           the engines + setup, closeout, tailor, migrate, update, discover
+  skills/                           the engines + setup, onboard, closeout, tailor, migrate, update, discover
   hooks/hooks.json                  SessionStart (auto-resume) + PostToolUse (auto-checkpoint)
   scripts/                          hook scripts
 templates/
