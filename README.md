@@ -20,27 +20,36 @@ This is the ground-up rebuild that replaces the original 47-skill, spec-driven W
 **Four always-on engines** (never typed): Artifact Engine, Project Sense, Learn, Meta-Orchestrator.
 **One real command:** `closeout`. Session start auto-resumes via a hook. A one-word "save this" forces a file if a proposal was missed.
 
-## Install
+## Getting started
 
-1. Add the marketplace:
-   ```
-   /plugin marketplace add hgreene624/workflow-kit-core
-   ```
-2. Install Core:
-   ```
-   /plugin install wfk-core@workflow-kit
-   ```
-3. Load it:
-   ```
-   /reload-plugins
-   ```
-4. Create your vault:
-   ```
-   /wfk-core:setup
-   ```
-   `setup` scaffolds a fresh vault, writes its `CLAUDE.md` and `.wfk/` (conventions + intent), enables the plugin in the vault's `.claude/settings.json`, and archives any old global WFK skills so they do not bleed in. Add the new vault folder in Obsidian and start working.
+There are two on-ramps. Pick the one that fits.
 
-   Plugin skills are namespaced `wfk-core:<skill>` and the manual ones are typed by you: `/wfk-core:setup`, `/wfk-core:onboard`, `/wfk-core:closeout`, `/wfk-core:migrate`, `/wfk-core:tailor`, `/wfk-core:update`, `/wfk-core:discover`. The ambient engines (artifact-engine, project, learn, meta-orchestrator, resume, save) you never type. `onboard` is the first-run concept tour, it also fires when a new user says "show me how this works."
+### If you've never used a terminal (the hand-held path)
+
+You do five small copy-paste actions; Claude does everything else. The full, screenshot-level version is **[START-HERE.md](START-HERE.md)**, send that to the person you're onboarding. The shape:
+
+1. **Get a paid Claude account** at [claude.ai](https://claude.ai). Claude Code does **not** run on a free plan, subscribe (Max is recommended, the first setup is token-heavy and Pro can hit its limit mid-run).
+2. **Open the Terminal.** Mac: press ⌘+Space, type **Terminal**, Return. Windows: Start menu, type **PowerShell**, click it.
+3. **Install Claude Code, one paste:**
+   - macOS: `curl -fsSL https://claude.ai/install.sh | bash`
+   - Windows (PowerShell): `irm https://claude.ai/install.ps1 | iex`
+4. **Launch it:** type `claude --dangerously-skip-permissions` and press Return. Sign in when the browser opens, and accept the one-time warning. (That flag just lets Claude run the setup without stopping to ask you to approve every step. It's setup-only.)
+5. **Paste the bootstrap prompt** (see **[BOOTSTRAP-PROMPT.md](BOOTSTRAP-PROMPT.md)**, also embedded in START-HERE). That single plain-English paste hands the rest to Claude: it installs the plugin itself, builds your vault, asks only your name and language, then gives you the exact lines to restart so the kit turns on. When it reopens, say **"show me how this works"** for the guided concept tour.
+
+Everything WFK-specific (GitHub, the marketplace, the plugin, the vault) happens *inside* that bootstrap prompt, so the new person never types a command or sees GitHub. To onboard others, follow **[ONBOARDING-PLAYBOOK.md](ONBOARDING-PLAYBOOK.md)**.
+
+### If you're comfortable in a terminal (the fast path)
+
+Open Claude Code and run, in order:
+
+1. Add the marketplace: `/plugin marketplace add hgreene624/workflow-kit-core`
+2. Install Core: `/plugin install wfk-core@workflow-kit`
+3. Load it: `/reload-plugins`
+4. Create your vault: `/wfk-core:setup`
+
+`setup` scaffolds a fresh vault, writes its `CLAUDE.md` and `.wfk/` (conventions + intent), enables the plugin in the vault's `.claude/settings.json`, and archives any old global WFK skills so they do not bleed in. Add the new vault folder in Obsidian and start working.
+
+Plugin skills are namespaced `wfk-core:<skill>` and the manual ones are typed by you: `/wfk-core:setup`, `/wfk-core:onboard`, `/wfk-core:closeout`, `/wfk-core:migrate`, `/wfk-core:tailor`, `/wfk-core:update`, `/wfk-core:discover`. The ambient engines (artifact-engine, project, learn, meta-orchestrator, resume, save) you never type. `onboard` is the first-run concept tour, it also fires when a new user says "show me how this works."
 
 ## Repo layout
 
